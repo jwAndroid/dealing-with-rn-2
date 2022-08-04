@@ -2,10 +2,17 @@
  * @format
  */
 
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { Text, View } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
+
   return (
     <View
       style={{
