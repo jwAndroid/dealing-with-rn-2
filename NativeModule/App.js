@@ -3,13 +3,15 @@
  */
 
 import React, { memo, useCallback } from 'react';
-import { Text, View } from 'react-native';
+import { Platform, StatusBar, Text, View } from 'react-native';
 
 import ToastModule from './Toast';
 
 function App() {
   const onPress = useCallback(() => {
-    ToastModule.show('Hello World', ToastModule.SHORT);
+    if (Platform.OS === 'android') {
+      ToastModule.show('Hello World', ToastModule.SHORT);
+    }
   }, []);
 
   return (
@@ -18,7 +20,10 @@ function App() {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'white',
       }}>
+      <StatusBar />
+
       <Text onPress={onPress}>Show Toast</Text>
     </View>
   );
