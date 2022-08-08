@@ -31,5 +31,6 @@ module.exports = {
     'no-undef': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'object-curly-newline': 'off',
   },
 }
