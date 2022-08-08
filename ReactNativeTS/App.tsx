@@ -4,7 +4,6 @@
 
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Counter } from './src/components'
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +17,7 @@ const styles = StyleSheet.create({
 function App() {
   return (
     <View style={styles.container}>
-      <Counter />
+      <Text>hello world</Text>
     </View>
   )
 }
