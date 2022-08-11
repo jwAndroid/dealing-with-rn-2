@@ -32,5 +32,6 @@ module.exports = {
     'import/extensions': 'off',
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
+    'import/prefer-default-export': 'off',
   },
 };

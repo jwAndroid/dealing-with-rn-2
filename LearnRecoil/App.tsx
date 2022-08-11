@@ -5,13 +5,12 @@
 import React, { memo } from 'react';
 import { RecoilRoot } from 'recoil';
 
-import { TodoApp } from './src/components';
-// import AuthApp from './src/components/AuthApp';
+import { PostApp } from './src/components';
 
 function App() {
   return (
     <RecoilRoot>
-      <TodoApp />
+      <PostApp />
     </RecoilRoot>
   );
 }
