@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   SafeAreaView,
   View,
@@ -7,8 +7,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
-// import useAuthActions from '../hooks/useAuthActions';
-// import useUser from '../hooks/useUser';
+import useAuthActions from '../hooks/useAuthActions';
+import useUser from '../hooks/useUser';
 
 const styles = StyleSheet.create({
   block: { flex: 1 },
@@ -17,31 +17,32 @@ const styles = StyleSheet.create({
 });
 
 function AuthStatus() {
-  // const user = useUser();
+  const user = useUser();
 
   return (
     <View style={styles.status}>
       <Text style={styles.text}>
-        {/* {user ? user.displayName : '로그인하세요'} */}
+        {user ? user.displayName : '로그인하세요'}
       </Text>
     </View>
   );
 }
 
 function AuthButtons() {
-  // const { authorize, logout } = useAuthActions();
+  const { authorize, logout } = useAuthActions();
+
   const onPressLogin = () => {
-    // authorize({
-    //   id: 1,
-    //   username: 'johndoe',
-    //   displayName: 'John Doe',
-    // });
+    authorize({
+      id: 1,
+      username: 'johndoe',
+      displayName: 'John Doe',
+    });
   };
 
   return (
     <View>
       <Button title="로그인" onPress={onPressLogin} />
-      {/* <Button title="로그아웃" onPress={logout} /> */}
+      <Button title="로그아웃" onPress={logout} />
     </View>
   );
 }
@@ -50,9 +51,10 @@ function AuthApp() {
   return (
     <SafeAreaView style={styles.block}>
       <AuthStatus />
+
       <AuthButtons />
     </SafeAreaView>
   );
 }
 
-export default AuthApp;
+export default memo(AuthApp);
