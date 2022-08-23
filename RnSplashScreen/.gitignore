@@ -61,3 +61,12 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+# unused Zero-Install
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
